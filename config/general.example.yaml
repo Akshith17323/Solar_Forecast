@@ -1,0 +1,23 @@
+# Reuse the same backend for another numeric-prediction project.
+# Set timestamp_column to a configured datetime field for a time-series project.
+project_name: General ML Backend — Example
+status: planning
+problem_statement: null
+schema_version: general-draft-v1
+timestamp_column: null
+target_column: target
+expected_interval_minutes: null
+unknown_columns: reject
+column_mapping: {}
+
+columns:
+  target:
+    dtype: number
+    required: true
+    unit: null
+  feature_1:
+    dtype: number
+    required: true
+  category:
+    dtype: string
+    required: false

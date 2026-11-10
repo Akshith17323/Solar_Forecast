@@ -2,10 +2,76 @@
 
 **Status: boilerplate and planning, not a completed forecasting system.**
 
-This repository starts the engineering foundation while the problem statement,
-dataset/API, target, units, model, and deployment platform are still undecided.
+This repository starts the engineering foundation for a public-API forecasting
+application. The selected direction is **public APIs, any country**; current
+research recommends **Elia's Belgian regional solar-generation estimates plus
+Open-Meteo forecast weather**, initially predicting next-hour average power in MW.
+The model, final ingestion/feature contract, and deployment platform are pending.
 There is **one reusable backend**, with a solar example profile and a general
 numeric-prediction example. No second copy of the backend is needed.
+
+## Data sources and verdict
+
+**Verdict: use Elia + Open-Meteo as the primary operational data sources.**
+**NASA POWER is a supporting source** for historical solar-resource analysis and
+retrospective weather validation. Source selection uses direct public APIs and
+excludes Kaggle-sourced datasets.
+
+**Proposed task:** forecast Belgium's next-hour average photovoltaic generation
+estimate in **MW**, using recent generation estimates and weather forecasts
+available at issue time, then evaluate against subsequently published estimates.
+
+| Source | Role in this project | Official links |
+|---|---|---|
+| **Elia Open Data** | Historical and ongoing Belgian regional PV generation estimates; supplies the target and generation history | [Live feed: `ods210`](https://opendata.elia.be/api/explore/v2.1/catalog/datasets/ods210), [recent history: `ods209`](https://opendata.elia.be/api/explore/v2.1/catalog/datasets/ods209), [legacy history: `ods032`](https://opendata.elia.be/api/explore/v2.1/catalog/datasets/ods032) |
+| **Open-Meteo / NOAA GFS** | Forecast irradiance, temperature, and cloud cover; supplies weather predictors | [Forecast API](https://open-meteo.com/en/docs), [Previous Runs archive](https://open-meteo.com/en/docs/previous-runs-api), [GFS documentation](https://open-meteo.com/en/docs/gfs-api) |
+| **NASA POWER — supporting** | Satellite/model-derived historical solar radiation, temperature, and cloud data for resource analysis and retrospective comparisons | [API explorer](https://power.larc.nasa.gov/api/pages/#/), [Hourly API documentation](https://power.larc.nasa.gov/docs/services/api/temporal/hourly/), [solar sources and latency](https://power.larc.nasa.gov/docs/methodology/data/sources_fluxes/) |
+
+### How to use these sources
+
+- **Elia:** select `region="Belgium"` and, in the new schema,
+  `gridconnectiontype="Total"`. These are measured/upscaled regional estimates,
+  not individual-plant meter readings. Source intervals are 15 minutes; live
+  running averages can be provisional. The **2026-10-26 migration** changed
+  historical `ods032.measured` to `ods209.measured_upscaled`; the current feed uses
+  `ods210.measured`. Preserve source versions when joining history and live data.
+- **Open-Meteo:** use forecast `temperature_2m`, `cloud_cover`, and
+  `shortwave_radiation`, with the model pinned to `gfs_global`. Match the model and
+  forecast-age policy between training and deployment. The initial reproducible
+  proposal uses `_previous_day1` fields for both archived and current-date
+  requests; moving to latest-run forecasts requires a matched evaluation.
+- **NASA POWER:** relevant fields are `ALLSKY_SFC_SW_DWN`, `T2M`, and `CLOUD_AMT`.
+  Its temporal products provide historical/lagged weather estimates, rather than
+  the electrical-generation target or operational next-hour weather forecasts.
+  Respect each field's availability delay, treat `-999` as missing,
+  and read the response units: hourly and daily solar-radiation units differ.
+  Request `time-standard=UTC` explicitly; the hourly default is Local Solar Time.
+
+### Direct data examples
+
+These links return JSON. Weather examples use **Brussels (50.85, 4.35)** as a
+single-point access check; the national model needs a weather grid across Belgium.
+
+- [Elia: latest non-null Belgium/Total generation estimates](https://opendata.elia.be/api/explore/v2.1/catalog/datasets/ods210/records?where=region%3D%22Belgium%22%20AND%20gridconnectiontype%3D%22Total%22%20AND%20measured%20is%20not%20null&order_by=datetime%20desc&limit=4)
+- [Open-Meteo: latest GFS weather forecasts](https://api.open-meteo.com/v1/forecast?latitude=50.85&longitude=4.35&hourly=temperature_2m,cloud_cover,shortwave_radiation&models=gfs_global&timezone=GMT&forecast_days=2)
+- [Open-Meteo: archived day1 GFS forecasts, July 1–2, 2025](https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.85&longitude=4.35&hourly=temperature_2m_previous_day1,cloud_cover_previous_day1,shortwave_radiation_previous_day1&models=gfs_global&timezone=GMT&start_date=2025-07-01&end_date=2025-07-02)
+- [NASA POWER: historical hourly solar/weather data, July 1–2, 2025](https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=ALLSKY_SFC_SW_DWN,T2M,CLOUD_AMT&community=RE&longitude=4.35&latitude=50.85&start=20250701&end=20250702&format=JSON&time-standard=UTC)
+
+**Verification on 2026-11-10:** Elia's downloaded 2024–2025 export contains
+**70,176** quarter-hour rows, **69,888** non-null targets, and **17,256** complete
+target hours before weather/lag matching. Same-day Elia access and live/archived
+Open-Meteo requests were verified. NASA's historical example returned all three
+variables for 48 hours; a November 1–10 hourly UTC probe had temperature through
+November 8 but missing solar/cloud values. These are access and availability
+checks, not model-accuracy results.
+
+**Access notes:** the reviewed requests worked without API keys. Open-Meteo's
+[free hosted API is for noncommercial use](https://open-meteo.com/en/pricing),
+and its [CC BY 4.0 data require attribution](https://open-meteo.com/en/licence).
+Elia metadata identifies the [Elia Open Data Licence](https://opendata.elia.be/pages/licence/);
+its full terms and exact quotas remain to be confirmed because the terms page was
+temporarily unavailable during review. Cache responses and record retrieval times
+and revisions when implementing the collectors.
 
 ## What works now
 
@@ -171,9 +237,10 @@ Tests use synthetic local fixtures and test-only adapters, not live services.
 
 ## Documentation and next steps
 
-1. [Record the open project decisions](docs/PROJECT_DECISIONS.md).
-2. [Understand configuration and adapter extension points](docs/BACKEND_GUIDE.md).
-3. [Publish to GitHub and optionally Kaggle](docs/PUBLISHING_GUIDE.md).
+1. [Review the operational data recommendation and evidence](docs/DATASET_RESEARCH_AND_PROBLEM_STATEMENT.md).
+2. [Record the remaining project decisions](docs/PROJECT_DECISIONS.md).
+3. [Understand configuration and adapter extension points](docs/BACKEND_GUIDE.md).
+4. [Publish to GitHub and optionally Kaggle](docs/PUBLISHING_GUIDE.md).
 
 **Recommended submission:** GitHub repository + hosted app + demo video. Kaggle is
 an optional notebook/data showcase, not a replacement for a backend host. Nothing

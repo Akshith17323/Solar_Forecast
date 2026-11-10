@@ -1,0 +1,6 @@
+{
+  "id": "YOUR_KAGGLE_USERNAME/solar-forecast-reviewed-sample",
+  "title": "Solar Forecast Reviewed Sample",
+  "description": "REPLACE: describe the actual source, measured/synthetic status, units, timezone, provenance, attribution, and limitations before uploading approved files.",
+  "licenses": [{"name": "REPLACE_AFTER_LICENSE_REVIEW"}]
+}

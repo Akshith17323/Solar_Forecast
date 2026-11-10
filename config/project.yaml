@@ -1,0 +1,35 @@
+# SOLAR EXAMPLE ONLY: these field names/bounds are NOT final dataset decisions.
+project_name: Solar Forecast — Backend Scaffold
+status: planning
+problem_statement: null
+schema_version: solar-draft-v1
+timestamp_column: timestamp
+target_column: power_generation
+expected_interval_minutes: null
+unknown_columns: reject
+
+# Original CSV/API field -> internal field. Populate only after inspecting data.
+column_mapping: {}
+
+columns:
+  timestamp:
+    dtype: datetime
+    required: true
+  power_generation:
+    dtype: number
+    required: true
+    minimum: 0
+    unit: null  # Decide power vs interval energy and its unit before modeling.
+  irradiance:
+    dtype: number
+    required: false
+    minimum: 0
+    unit: null
+  temperature:
+    dtype: number
+    required: false
+    unit: null
+  cloud_cover:
+    dtype: number
+    required: false
+    unit: null  # Do NOT assume 0–1 vs 0–100 until the source is reviewed.

@@ -1,0 +1,55 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Secrets: examples are safe to commit, actual credentials are not.
+.env
+.env.*
+!.env.example
+**/kaggle.json
+**/access_token
+.streamlit/secrets.toml
+*.pem
+*.key
+
+# Local/generated data and artifacts; keep small documented samples separately.
+/data/raw/*
+!/data/raw/.gitkeep
+/data/interim/*
+!/data/interim/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+/data/knowledge_base/*
+!/data/knowledge_base/.gitkeep
+/artifacts/models/*
+!/artifacts/models/.gitkeep
+/artifacts/metrics/*
+!/artifacts/metrics/.gitkeep
+*.joblib
+*.pkl
+*.log
+
+# Review redistribution rights before sharing the original supplied brief.
+/Project 13_AI_ML.pdf
+
+# Local guides and planning documents
+/docs/
+/PROJECT_CONTEXT_AND_TASKS.md
+/ML_AND_MLOPS_LIFECYCLE.md
+/Key_points.md
+
+# Publishing staging folders are NOT protected by Git when uploading to Kaggle.
+/publishing/kaggle/notebook_upload/
+/publishing/kaggle/dataset_upload/
+.ipynb_checkpoints/
+.DS_Store

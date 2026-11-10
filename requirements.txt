@@ -1,0 +1,3 @@
+# Compatibility entry point for pip-based hosts. For locked local/CI installs,
+# use: uv sync --frozen --extra dev --extra ui
+-e .[ui]
