@@ -22,13 +22,19 @@ dist/
 *.pem
 *.key
 
-# Local/generated data and artifacts; keep small documented samples separately.
-/data/raw/*
+# Local/generated data and artifacts; keep small documented samples and manifests.
+/data/raw/**
 !/data/raw/.gitkeep
+!/data/raw/elia_generation/
+!/data/raw/elia_generation/source_manifest.json
+!/data/raw/belgium_weather_archive/
+!/data/raw/belgium_weather_archive/download_manifest.json
 /data/interim/*
 !/data/interim/.gitkeep
-/data/processed/*
+/data/processed/**
 !/data/processed/.gitkeep
+!/data/processed/model_training/
+!/data/processed/model_training/dataset_manifest.json
 /data/knowledge_base/*
 !/data/knowledge_base/.gitkeep
 /artifacts/models/*
@@ -41,12 +47,6 @@ dist/
 
 # Review redistribution rights before sharing the original supplied brief.
 /Project 13_AI_ML.pdf
-
-# Local guides and planning documents
-/docs/
-/PROJECT_CONTEXT_AND_TASKS.md
-/ML_AND_MLOPS_LIFECYCLE.md
-/Key_points.md
 
 # Publishing staging folders are NOT protected by Git when uploading to Kaggle.
 /publishing/kaggle/notebook_upload/

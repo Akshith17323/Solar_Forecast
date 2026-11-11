@@ -1,0 +1,9 @@
+{
+  "horizon_points": 4,
+  "records": [
+    {"timestamp": "2026-01-02T08:00:00Z", "irradiance": 180, "temperature": 21, "cloud_cover": 50},
+    {"timestamp": "2026-01-02T09:00:00Z", "irradiance": 350, "temperature": 23, "cloud_cover": 45},
+    {"timestamp": "2026-01-02T10:00:00Z", "irradiance": 550, "temperature": 25, "cloud_cover": 30},
+    {"timestamp": "2026-01-02T11:00:00Z", "irradiance": 650, "temperature": 26, "cloud_cover": 25}
+  ]
+}

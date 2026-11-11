@@ -1,0 +1,27 @@
+{
+  "schema_version": "belgium-solar-training-v1",
+  "problem_statement": "Forecast Belgium's average photovoltaic generation estimate in MW for the next UTC hour.",
+  "target_column": "power_generation_mw",
+  "target_unit": "MW",
+  "target_interval_minutes": 60,
+  "weather_valid_time_offset_hours": 1,
+  "generation_lags_hours": [
+    1,
+    24,
+    168
+  ],
+  "splits": {
+    "train": {
+      "start": "2024-01-01T00:00:00Z",
+      "end_exclusive": "2024-10-01T00:00:00Z"
+    },
+    "validation": {
+      "start": "2024-10-01T00:00:00Z",
+      "end_exclusive": "2025-01-01T00:00:00Z"
+    },
+    "test": {
+      "start": "2025-01-01T00:00:00Z",
+      "end_exclusive": "2026-01-01T00:00:00Z"
+    }
+  }
+}

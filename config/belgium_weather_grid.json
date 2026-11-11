@@ -1,0 +1,87 @@
+{
+  "schema_version": "belgium-gfs-grid-v1",
+  "description": "Nine fixed Open-Meteo grid requests spanning Belgium for the first regional forecasting experiment.",
+  "country": "Belgium",
+  "timezone": "GMT",
+  "model": "gfs_global",
+  "product": "previous-runs",
+  "forecast_offset": "previous_day1",
+  "hourly_variables": [
+    "temperature_2m_previous_day1",
+    "cloud_cover_previous_day1",
+    "shortwave_radiation_previous_day1"
+  ],
+  "periods": [
+    {
+      "id": "2024",
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31"
+    },
+    {
+      "id": "2025",
+      "start_date": "2025-01-01",
+      "end_date": "2025-12-31"
+    },
+    {
+      "id": "2026-01-01",
+      "start_date": "2026-01-01",
+      "end_date": "2026-01-01"
+    }
+  ],
+  "points": [
+    {
+      "id": "bruges_west",
+      "label": "Bruges / West Flanders",
+      "latitude": 51.21,
+      "longitude": 3.22
+    },
+    {
+      "id": "antwerp_north",
+      "label": "Antwerp / north",
+      "latitude": 51.22,
+      "longitude": 4.4
+    },
+    {
+      "id": "hasselt_northeast",
+      "label": "Hasselt / northeast",
+      "latitude": 50.93,
+      "longitude": 5.34
+    },
+    {
+      "id": "ghent_west_central",
+      "label": "Ghent / west-central",
+      "latitude": 51.05,
+      "longitude": 3.72
+    },
+    {
+      "id": "brussels_central",
+      "label": "Brussels / central",
+      "latitude": 50.85,
+      "longitude": 4.35
+    },
+    {
+      "id": "liege_east",
+      "label": "Liege / east",
+      "latitude": 50.63,
+      "longitude": 5.58
+    },
+    {
+      "id": "mons_southwest",
+      "label": "Mons / southwest",
+      "latitude": 50.45,
+      "longitude": 3.95
+    },
+    {
+      "id": "namur_south_central",
+      "label": "Namur / south-central",
+      "latitude": 50.47,
+      "longitude": 4.87
+    },
+    {
+      "id": "arlon_southeast",
+      "label": "Arlon / southeast",
+      "latitude": 49.68,
+      "longitude": 5.81
+    }
+  ]
+}

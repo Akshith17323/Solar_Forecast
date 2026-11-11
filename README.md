@@ -49,19 +49,26 @@ available at issue time, then evaluate against subsequently published estimates.
 
 ### Direct data examples
 
-These links return JSON. Weather examples use **Brussels (50.85, 4.35)** as a
-single-point access check; the national model needs a weather grid across Belgium.
+These links return JSON. The direct weather examples use **Brussels (50.85, 4.35)**
+as a single-point access check. The first offline experiment now uses the versioned
+nine-point grid in `config/belgium_weather_grid.json`.
 
 - [Elia: latest non-null Belgium/Total generation estimates](https://opendata.elia.be/api/explore/v2.1/catalog/datasets/ods210/records?where=region%3D%22Belgium%22%20AND%20gridconnectiontype%3D%22Total%22%20AND%20measured%20is%20not%20null&order_by=datetime%20desc&limit=4)
 - [Open-Meteo: latest GFS weather forecasts](https://api.open-meteo.com/v1/forecast?latitude=50.85&longitude=4.35&hourly=temperature_2m,cloud_cover,shortwave_radiation&models=gfs_global&timezone=GMT&forecast_days=2)
 - [Open-Meteo: archived day1 GFS forecasts, July 1–2, 2025](https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.85&longitude=4.35&hourly=temperature_2m_previous_day1,cloud_cover_previous_day1,shortwave_radiation_previous_day1&models=gfs_global&timezone=GMT&start_date=2025-07-01&end_date=2025-07-02)
 - [NASA POWER: historical hourly solar/weather data, July 1–2, 2025](https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=ALLSKY_SFC_SW_DWN,T2M,CLOUD_AMT&community=RE&longitude=4.35&latitude=50.85&start=20250701&end=20250702&format=JSON&time-standard=UTC)
 
-**Verification on 2026-11-10:** Elia's downloaded 2024–2025 export contains
+**Verification on 2026-11-11:** Elia's downloaded 2024–2025 export contains
 **70,176** quarter-hour rows, **69,888** non-null targets, and **17,256** complete
-target hours before weather/lag matching. Same-day Elia access and live/archived
-Open-Meteo requests were verified. NASA's historical example returned all three
-variables for 48 hours; a November 1–10 hourly UTC probe had temperature through
+target hours before weather/lag matching. The pinned Open-Meteo archive contains
+**158,112 point-hours** across nine unique Belgian GFS grid points. After explicit
+end-of-hour weather alignment, **16,831 hours** have a complete target and all 27
+weather features: 8,071 in 2024 and all 8,760 hours in 2025. Initial weather values
+are unavailable through January 19, 2024 11:00 UTC; 125 cloud-cover rounding
+artifacts at -1%/101% are preserved and explicitly clipped to 0–100% for modeling.
+Same-day Elia access and live/archived Open-Meteo requests were verified. NASA's
+historical example returned all three variables for 48 hours; a November 1–10
+hourly UTC probe had temperature through
 November 8 but missing solar/cloud values. These are access and availability
 checks, not model-accuracy results.
 
@@ -84,9 +91,11 @@ and revisions when implementing the collectors.
 - Replaceable data-provider, predictor, and advisor interfaces.
 - Optional Streamlit shell, offline validation script, synthetic fixtures, tests,
   and a GitHub Actions workflow.
+- Versioned nine-point Belgian weather-grid configuration, reproducible archived
+  weather downloader, checksummed raw manifest, and validated loading notebook.
 
-**Not implemented yet:** real data ingestion, provider-specific unit conversion,
-snapshot/Parquet pipelines, feature engineering, training/evaluation, artifact
+**Not implemented yet:** scheduled production ingestion, persistent live-feed
+collection, Parquet pipelines, model training/evaluation, artifact
 loading, calibrated uncertainty, RAG/LangGraph, authentication, or public hosting.
 Model/provider/advisor endpoints return an explicit `503 ..._not_configured` until
 their adapters are registered. The sample data is synthetic and proves no accuracy.
@@ -142,6 +151,36 @@ Offline validation:
 uv run python -m scripts.validate_data data/sample/solar_history.csv
 uv run python -m scripts.validate_data data/sample/solar_future.csv --mode inference
 ```
+
+Download the frozen Elia target and reviewed Belgian archived-forecast weather grid
+on a fresh checkout:
+
+```bash
+uv run python -m scripts.download_elia_training_data
+uv run python -m scripts.download_belgium_weather
+```
+
+The command creates immutable, Git-ignored responses and a checksum manifest under
+`data/raw/belgium_weather_archive/`. Existing responses are not overwritten unless
+`--force` is supplied. Open `notebooks/01_data_loading.ipynb` to validate and align
+the Elia target with these weather inputs.
+
+Create the frozen model-training files:
+
+```bash
+uv run python -m scripts.prepare_training_data
+```
+
+This writes checksummed `train.csv`, `validation.csv`, `test.csv`, and
+`dataset_manifest.json` files under `data/processed/model_training/`. The current
+dataset has 5,622 training rows, 2,171 validation rows, 8,760 untouched test rows,
+and 44 documented features. Use `--force` only when intentionally regenerating
+these derived files from the frozen raw inputs.
+
+Only the raw Elia training target and nine-point Belgian weather archive are kept.
+Retired PVDAQ/California files and temporary API probes were removed; their source
+URLs, hashes, intended later uses, and restoration notes are recorded in
+[`docs/DEFERRED_DATA_SOURCES.md`](docs/DEFERRED_DATA_SOURCES.md).
 
 HTTP validation:
 
@@ -209,11 +248,14 @@ src/project_backend/
   services.py                  Predictor/advisor interfaces and orchestration
   main.py                      Default API entry point
 scripts/validate_data.py       Offline CSV validation
+scripts/download_elia_training_data.py  Frozen Elia target downloader
+scripts/download_belgium_weather.py  Versioned Open-Meteo archive downloader
+scripts/prepare_training_data.py     Chronological model-training dataset builder
 data/sample/                   Documented synthetic fixtures
 data/{raw,interim,processed}/  Ignored local/generated data
 artifacts/                     Ignored generated model/metric artifacts
 tests/                         Offline unit and API contract tests
-notebooks/                     Kaggle-compatible planning/inspection starter
+notebooks/                     Validated data loading plus planning starter
 publishing/kaggle/             Safe-to-edit publishing metadata templates
 docs/                          Backend, decisions, and publishing guides
 .github/workflows/ci.yml       Lint, format, and tests

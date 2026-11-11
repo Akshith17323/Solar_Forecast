@@ -1,0 +1,27 @@
+{
+  "schema_version": "elia-training-source-v1",
+  "purpose": "Frozen Belgian photovoltaic generation target for model training",
+  "publisher": "Elia Transmission Belgium",
+  "source_dataset": "ods032",
+  "source_url": "https://opendata.elia.be/api/explore/v2.1/catalog/datasets/ods032/exports/csv?where=region%3D%22Belgium%22+AND+datetime+%3E%3D+date%272024-01-01T00%3A00%3A00Z%27+AND+datetime+%3C+date%272026-01-01T00%3A00%3A00Z%27&select=datetime%2Cresolutioncode%2Cregion%2Cmeasured%2Cdayaheadforecast%2Cmonitoredcapacity&order_by=datetime&timezone=UTC&use_labels=false",
+  "requested_at_utc": "2026-11-10T05:08:04.947105+00:00",
+  "retrieved_at_utc": "2026-11-10T05:08:14.990031+00:00",
+  "license_metadata": "Elia Open Data Licence",
+  "license_url": "https://opendata.elia.be/pages/licence/",
+  "license_note": "Confirm current full terms and quotas before redistribution or production collection.",
+  "authentication": "No API key was used for the reviewed download.",
+  "file": {
+    "name": "belgium_2024_2025.csv",
+    "content_type": "text/csv; charset=utf-8",
+    "delimiter": ";",
+    "bytes": 4434331,
+    "sha256": "d85a51085f6b22d86912fe30be19a486ff6c9c9d4ef4d2f00f636504c8c87dc7",
+    "rows": 70176,
+    "first_interval_start_utc": "2024-01-01T00:00:00+00:00",
+    "last_interval_start_utc": "2025-12-31T23:45:00+00:00",
+    "interval_minutes": 15,
+    "target_field": "measured",
+    "target_unit": "MW",
+    "region": "Belgium"
+  }
+}

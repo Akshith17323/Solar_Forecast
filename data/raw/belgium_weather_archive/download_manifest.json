@@ -1,0 +1,1111 @@
+{
+  "schema_version": "belgium-weather-archive-manifest-v1",
+  "created_at_utc": "2026-11-11T03:27:46.405054+00:00",
+  "purpose": "Forecast-time weather features for the Belgian regional solar experiment",
+  "source": "Open-Meteo Previous Runs API; underlying model NOAA GFS",
+  "licence": "Open-Meteo data: CC BY 4.0; hosted free API restricted to noncommercial use",
+  "source_documentation": "https://open-meteo.com/en/docs/previous-runs-api",
+  "grid_config": "config/belgium_weather_grid.json",
+  "grid_schema_version": "belgium-gfs-grid-v1",
+  "model": "gfs_global",
+  "forecast_offset": "previous_day1",
+  "timezone": "GMT",
+  "requested_points": 9,
+  "unique_returned_grid_points": 9,
+  "summary": {
+    "files": 27,
+    "payload_bytes": 5047889,
+    "point_hour_rows": 158112,
+    "null_counts": {
+      "temperature_2m_previous_day1": 3996,
+      "cloud_cover_previous_day1": 3996,
+      "shortwave_radiation_previous_day1": 3996
+    },
+    "range_warning_counts": {
+      "cloud_cover_outside_0_100": 125,
+      "negative_shortwave_radiation": 0
+    }
+  },
+  "files": [
+    {
+      "file": "bruges_west__2024.json",
+      "point_id": "bruges_west",
+      "point_label": "Bruges / West Flanders",
+      "period_id": "2024",
+      "requested_coordinates": {
+        "latitude": 51.21,
+        "longitude": 3.22
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=51.21&longitude=3.22&start_date=2024-01-01&end_date=2024-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:06.009027+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:07.142891+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 281763,
+      "sha256": "bde89c6c16742aec431235b420cc961ef18f97ff96c8aa8a316f32ec922cd35c",
+      "rows": 8784,
+      "first_valid_time": "2024-01-01T00:00",
+      "last_valid_time": "2024-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 51.252853,
+        "longitude": 3.1640625,
+        "elevation_m": 10.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 444,
+        "cloud_cover_previous_day1": 444,
+        "shortwave_radiation_previous_day1": 444
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 5,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "bruges_west__2025.json",
+      "point_id": "bruges_west",
+      "point_label": "Bruges / West Flanders",
+      "period_id": "2025",
+      "requested_coordinates": {
+        "latitude": 51.21,
+        "longitude": 3.22
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=51.21&longitude=3.22&start_date=2025-01-01&end_date=2025-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:07.145012+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:07.317795+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 278391,
+      "sha256": "e4862d94fc91786b337ba09c6493b7048b58fd4f9caf887ee17a3d4b613700bb",
+      "rows": 8760,
+      "first_valid_time": "2025-01-01T00:00",
+      "last_valid_time": "2025-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 51.252853,
+        "longitude": 3.1640625,
+        "elevation_m": 10.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 7,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "bruges_west__2026-01-01.json",
+      "point_id": "bruges_west",
+      "point_label": "Bruges / West Flanders",
+      "period_id": "2026-01-01",
+      "requested_coordinates": {
+        "latitude": 51.21,
+        "longitude": 3.22
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=51.21&longitude=3.22&start_date=2026-01-01&end_date=2026-01-01&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:07.319954+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:07.467760+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 1190,
+      "sha256": "a4b61e1dd79b9b79b54f107043abe01c1eb38c3cef901b7ccb12be710a1ac25d",
+      "rows": 24,
+      "first_valid_time": "2026-01-01T00:00",
+      "last_valid_time": "2026-01-01T23:00",
+      "returned_coordinates": {
+        "latitude": 51.252853,
+        "longitude": 3.1640625,
+        "elevation_m": 10.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 0,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "antwerp_north__2024.json",
+      "point_id": "antwerp_north",
+      "point_label": "Antwerp / north",
+      "period_id": "2024",
+      "requested_coordinates": {
+        "latitude": 51.22,
+        "longitude": 4.4
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=51.22&longitude=4.4&start_date=2024-01-01&end_date=2024-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:07.468187+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:07.642281+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 281719,
+      "sha256": "91b2201baed647ded5a513a5cee16706692161f8f453169b558caef3ab8e277f",
+      "rows": 8784,
+      "first_valid_time": "2024-01-01T00:00",
+      "last_valid_time": "2024-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 51.252853,
+        "longitude": 4.453125,
+        "elevation_m": 9.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 444,
+        "cloud_cover_previous_day1": 444,
+        "shortwave_radiation_previous_day1": 444
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 6,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "antwerp_north__2025.json",
+      "point_id": "antwerp_north",
+      "point_label": "Antwerp / north",
+      "period_id": "2025",
+      "requested_coordinates": {
+        "latitude": 51.22,
+        "longitude": 4.4
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=51.22&longitude=4.4&start_date=2025-01-01&end_date=2025-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:07.648413+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:07.817899+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 278396,
+      "sha256": "8e6f117a44974e39d20f9ccbb896c76878faf5075f5c32853f891bf5088524dc",
+      "rows": 8760,
+      "first_valid_time": "2025-01-01T00:00",
+      "last_valid_time": "2025-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 51.252853,
+        "longitude": 4.453125,
+        "elevation_m": 9.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 8,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "antwerp_north__2026-01-01.json",
+      "point_id": "antwerp_north",
+      "point_label": "Antwerp / north",
+      "period_id": "2026-01-01",
+      "requested_coordinates": {
+        "latitude": 51.22,
+        "longitude": 4.4
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=51.22&longitude=4.4&start_date=2026-01-01&end_date=2026-01-01&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:07.823931+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:07.974047+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 1187,
+      "sha256": "6d06437582f5775be62308e6a02f15297edca3bf60aea6fac1910edc874b82bf",
+      "rows": 24,
+      "first_valid_time": "2026-01-01T00:00",
+      "last_valid_time": "2026-01-01T23:00",
+      "returned_coordinates": {
+        "latitude": 51.252853,
+        "longitude": 4.453125,
+        "elevation_m": 9.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 0,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "hasselt_northeast__2024.json",
+      "point_id": "hasselt_northeast",
+      "point_label": "Hasselt / northeast",
+      "period_id": "2024",
+      "requested_coordinates": {
+        "latitude": 50.93,
+        "longitude": 5.34
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.93&longitude=5.34&start_date=2024-01-01&end_date=2024-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:07.976290+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:08.424917+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 281465,
+      "sha256": "ee1e4a50813f8225f155562f6be8b703e70c20b13069bb01d8bd182c4d8dde74",
+      "rows": 8784,
+      "first_valid_time": "2024-01-01T00:00",
+      "last_valid_time": "2024-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 50.901398,
+        "longitude": 5.390625,
+        "elevation_m": 39.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 444,
+        "cloud_cover_previous_day1": 444,
+        "shortwave_radiation_previous_day1": 444
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 5,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "hasselt_northeast__2025.json",
+      "point_id": "hasselt_northeast",
+      "point_label": "Hasselt / northeast",
+      "period_id": "2025",
+      "requested_coordinates": {
+        "latitude": 50.93,
+        "longitude": 5.34
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.93&longitude=5.34&start_date=2025-01-01&end_date=2025-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:08.431614+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:08.606291+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 278407,
+      "sha256": "9c6b834a9318a52600463feb743962bab218f57edb9a9da475b731ec3f0a9b34",
+      "rows": 8760,
+      "first_valid_time": "2025-01-01T00:00",
+      "last_valid_time": "2025-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 50.901398,
+        "longitude": 5.390625,
+        "elevation_m": 39.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 5,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "hasselt_northeast__2026-01-01.json",
+      "point_id": "hasselt_northeast",
+      "point_label": "Hasselt / northeast",
+      "period_id": "2026-01-01",
+      "requested_coordinates": {
+        "latitude": 50.93,
+        "longitude": 5.34
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.93&longitude=5.34&start_date=2026-01-01&end_date=2026-01-01&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:08.612516+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:08.763462+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 1189,
+      "sha256": "cd4965f01febfb580d4ed7a5b302e21b7e48328e51f2e6102d813c5c9a60a75a",
+      "rows": 24,
+      "first_valid_time": "2026-01-01T00:00",
+      "last_valid_time": "2026-01-01T23:00",
+      "returned_coordinates": {
+        "latitude": 50.901398,
+        "longitude": 5.390625,
+        "elevation_m": 39.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 0,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "ghent_west_central__2024.json",
+      "point_id": "ghent_west_central",
+      "point_label": "Ghent / west-central",
+      "period_id": "2024",
+      "requested_coordinates": {
+        "latitude": 51.05,
+        "longitude": 3.72
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=51.05&longitude=3.72&start_date=2024-01-01&end_date=2024-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:08.765147+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:09.271334+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 281647,
+      "sha256": "2a7dc010e81750bbeaa57f79cadfd138c59eb68d9b0ae5b78bc3b47d59608f2c",
+      "rows": 8784,
+      "first_valid_time": "2024-01-01T00:00",
+      "last_valid_time": "2024-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 51.01854,
+        "longitude": 3.75,
+        "elevation_m": 9.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 444,
+        "cloud_cover_previous_day1": 444,
+        "shortwave_radiation_previous_day1": 444
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 8,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "ghent_west_central__2025.json",
+      "point_id": "ghent_west_central",
+      "point_label": "Ghent / west-central",
+      "period_id": "2025",
+      "requested_coordinates": {
+        "latitude": 51.05,
+        "longitude": 3.72
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=51.05&longitude=3.72&start_date=2025-01-01&end_date=2025-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:09.277798+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:09.442515+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 278409,
+      "sha256": "e77cda0e698c7c0cbb437a97e1dc5afd02a9892afcef1d6be9be62d1ff2a4057",
+      "rows": 8760,
+      "first_valid_time": "2025-01-01T00:00",
+      "last_valid_time": "2025-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 51.01854,
+        "longitude": 3.75,
+        "elevation_m": 9.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 6,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "ghent_west_central__2026-01-01.json",
+      "point_id": "ghent_west_central",
+      "point_label": "Ghent / west-central",
+      "period_id": "2026-01-01",
+      "requested_coordinates": {
+        "latitude": 51.05,
+        "longitude": 3.72
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=51.05&longitude=3.72&start_date=2026-01-01&end_date=2026-01-01&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:09.448952+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:09.599144+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 1183,
+      "sha256": "c71988e4d25ff8da7cab2dd9d42e7cd9ab607805008184677c50ab158ea27b7e",
+      "rows": 24,
+      "first_valid_time": "2026-01-01T00:00",
+      "last_valid_time": "2026-01-01T23:00",
+      "returned_coordinates": {
+        "latitude": 51.01854,
+        "longitude": 3.75,
+        "elevation_m": 9.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 0,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "brussels_central__2024.json",
+      "point_id": "brussels_central",
+      "point_label": "Brussels / central",
+      "period_id": "2024",
+      "requested_coordinates": {
+        "latitude": 50.85,
+        "longitude": 4.35
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.85&longitude=4.35&start_date=2024-01-01&end_date=2024-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:09.601218+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:09.766410+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 281571,
+      "sha256": "ebda949c367ad7e132bf22d04e540bdd0a74ed385d4fcb3ffd8c690658298e21",
+      "rows": 8784,
+      "first_valid_time": "2024-01-01T00:00",
+      "last_valid_time": "2024-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 50.901398,
+        "longitude": 4.3359375,
+        "elevation_m": 27.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 444,
+        "cloud_cover_previous_day1": 444,
+        "shortwave_radiation_previous_day1": 444
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 7,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "brussels_central__2025.json",
+      "point_id": "brussels_central",
+      "point_label": "Brussels / central",
+      "period_id": "2025",
+      "requested_coordinates": {
+        "latitude": 50.85,
+        "longitude": 4.35
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.85&longitude=4.35&start_date=2025-01-01&end_date=2025-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:09.772876+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:09.936230+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 278534,
+      "sha256": "9a9afbba2b8ae87af5c869c1a40116241a6eea25d078742feb67f231a474bd05",
+      "rows": 8760,
+      "first_valid_time": "2025-01-01T00:00",
+      "last_valid_time": "2025-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 50.901398,
+        "longitude": 4.3359375,
+        "elevation_m": 27.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 6,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "brussels_central__2026-01-01.json",
+      "point_id": "brussels_central",
+      "point_label": "Brussels / central",
+      "period_id": "2026-01-01",
+      "requested_coordinates": {
+        "latitude": 50.85,
+        "longitude": 4.35
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.85&longitude=4.35&start_date=2026-01-01&end_date=2026-01-01&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:09.942505+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:10.092292+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 1190,
+      "sha256": "2d19880c801fc5775514b73d36de3168cd86d3823b4ade942f0739fcb0a72c15",
+      "rows": 24,
+      "first_valid_time": "2026-01-01T00:00",
+      "last_valid_time": "2026-01-01T23:00",
+      "returned_coordinates": {
+        "latitude": 50.901398,
+        "longitude": 4.3359375,
+        "elevation_m": 27.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 0,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "liege_east__2024.json",
+      "point_id": "liege_east",
+      "point_label": "Liege / east",
+      "period_id": "2024",
+      "requested_coordinates": {
+        "latitude": 50.63,
+        "longitude": 5.58
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.63&longitude=5.58&start_date=2024-01-01&end_date=2024-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:10.093685+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:10.519771+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 281469,
+      "sha256": "656800ae56b9e5cb97e6af7ff7e8445b53f236a6b3c0fe3076781cf4a1592afc",
+      "rows": 8784,
+      "first_valid_time": "2024-01-01T00:00",
+      "last_valid_time": "2024-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 50.6671,
+        "longitude": 5.625,
+        "elevation_m": 66.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 444,
+        "cloud_cover_previous_day1": 444,
+        "shortwave_radiation_previous_day1": 444
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 6,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "liege_east__2025.json",
+      "point_id": "liege_east",
+      "point_label": "Liege / east",
+      "period_id": "2025",
+      "requested_coordinates": {
+        "latitude": 50.63,
+        "longitude": 5.58
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.63&longitude=5.58&start_date=2025-01-01&end_date=2025-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:10.525411+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:10.700211+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 278274,
+      "sha256": "bd0df5618dd74ffadd43b19c04894725aed8ddf2ec314a8382a2df425c592e85",
+      "rows": 8760,
+      "first_valid_time": "2025-01-01T00:00",
+      "last_valid_time": "2025-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 50.6671,
+        "longitude": 5.625,
+        "elevation_m": 66.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 6,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "liege_east__2026-01-01.json",
+      "point_id": "liege_east",
+      "point_label": "Liege / east",
+      "period_id": "2026-01-01",
+      "requested_coordinates": {
+        "latitude": 50.63,
+        "longitude": 5.58
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.63&longitude=5.58&start_date=2026-01-01&end_date=2026-01-01&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:10.706431+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:10.855623+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 1177,
+      "sha256": "d14872d45ebb4da62c07c67eb44fce40b9782d39c29a1654b09e6f6821d2588e",
+      "rows": 24,
+      "first_valid_time": "2026-01-01T00:00",
+      "last_valid_time": "2026-01-01T23:00",
+      "returned_coordinates": {
+        "latitude": 50.6671,
+        "longitude": 5.625,
+        "elevation_m": 66.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 0,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "mons_southwest__2024.json",
+      "point_id": "mons_southwest",
+      "point_label": "Mons / southwest",
+      "period_id": "2024",
+      "requested_coordinates": {
+        "latitude": 50.45,
+        "longitude": 3.95
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.45&longitude=3.95&start_date=2024-01-01&end_date=2024-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:10.857120+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:11.343656+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 281521,
+      "sha256": "302d1973f23e7d5fd928725fdff7d5575f821617cc147020c58398719f129ba6",
+      "rows": 8784,
+      "first_valid_time": "2024-01-01T00:00",
+      "last_valid_time": "2024-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 50.4328,
+        "longitude": 3.984375,
+        "elevation_m": 39.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 444,
+        "cloud_cover_previous_day1": 444,
+        "shortwave_radiation_previous_day1": 444
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 6,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "mons_southwest__2025.json",
+      "point_id": "mons_southwest",
+      "point_label": "Mons / southwest",
+      "period_id": "2025",
+      "requested_coordinates": {
+        "latitude": 50.45,
+        "longitude": 3.95
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.45&longitude=3.95&start_date=2025-01-01&end_date=2025-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:11.349833+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:11.520518+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 278225,
+      "sha256": "8a1783a6e854f025fe14e8fb20a1cbe2a65987b81cee772c6419d1560fb41294",
+      "rows": 8760,
+      "first_valid_time": "2025-01-01T00:00",
+      "last_valid_time": "2025-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 50.4328,
+        "longitude": 3.984375,
+        "elevation_m": 39.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 9,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "mons_southwest__2026-01-01.json",
+      "point_id": "mons_southwest",
+      "point_label": "Mons / southwest",
+      "period_id": "2026-01-01",
+      "requested_coordinates": {
+        "latitude": 50.45,
+        "longitude": 3.95
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.45&longitude=3.95&start_date=2026-01-01&end_date=2026-01-01&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:11.527140+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:11.676505+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 1185,
+      "sha256": "936dbd713e1dff20283b1ab556ba05aba2cf3146116edce5cbdf29fcb1e60e0c",
+      "rows": 24,
+      "first_valid_time": "2026-01-01T00:00",
+      "last_valid_time": "2026-01-01T23:00",
+      "returned_coordinates": {
+        "latitude": 50.4328,
+        "longitude": 3.984375,
+        "elevation_m": 39.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 0,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "namur_south_central__2024.json",
+      "point_id": "namur_south_central",
+      "point_label": "Namur / south-central",
+      "period_id": "2024",
+      "requested_coordinates": {
+        "latitude": 50.47,
+        "longitude": 4.87
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.47&longitude=4.87&start_date=2024-01-01&end_date=2024-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:11.677983+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:11.845659+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 281399,
+      "sha256": "edd241379bd8b6f25eafc7195650f083f2942d2e94528cf153b3de4b458f53c0",
+      "rows": 8784,
+      "first_valid_time": "2024-01-01T00:00",
+      "last_valid_time": "2024-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 50.4328,
+        "longitude": 4.921875,
+        "elevation_m": 95.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 444,
+        "cloud_cover_previous_day1": 444,
+        "shortwave_radiation_previous_day1": 444
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 5,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "namur_south_central__2025.json",
+      "point_id": "namur_south_central",
+      "point_label": "Namur / south-central",
+      "period_id": "2025",
+      "requested_coordinates": {
+        "latitude": 50.47,
+        "longitude": 4.87
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.47&longitude=4.87&start_date=2025-01-01&end_date=2025-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:11.852019+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:12.019442+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 278088,
+      "sha256": "1d196c60d5d103643bcd48a33d13281dc7a804fdc18253dafbb175ac43f01b02",
+      "rows": 8760,
+      "first_valid_time": "2025-01-01T00:00",
+      "last_valid_time": "2025-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 50.4328,
+        "longitude": 4.921875,
+        "elevation_m": 95.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 8,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "namur_south_central__2026-01-01.json",
+      "point_id": "namur_south_central",
+      "point_label": "Namur / south-central",
+      "period_id": "2026-01-01",
+      "requested_coordinates": {
+        "latitude": 50.47,
+        "longitude": 4.87
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=50.47&longitude=4.87&start_date=2026-01-01&end_date=2026-01-01&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:12.023178+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:12.171232+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 1185,
+      "sha256": "dc846969035a022528e1715e7a4ca73120d18d8a81aac0b36c67a267af87c80e",
+      "rows": 24,
+      "first_valid_time": "2026-01-01T00:00",
+      "last_valid_time": "2026-01-01T23:00",
+      "returned_coordinates": {
+        "latitude": 50.4328,
+        "longitude": 4.921875,
+        "elevation_m": 95.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 0,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "arlon_southeast__2024.json",
+      "point_id": "arlon_southeast",
+      "point_label": "Arlon / southeast",
+      "period_id": "2024",
+      "requested_coordinates": {
+        "latitude": 49.68,
+        "longitude": 5.81
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=49.68&longitude=5.81&start_date=2024-01-01&end_date=2024-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:12.172774+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:12.727954+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 280529,
+      "sha256": "6629b540d6347c93b53d5141a08fd62a06d301f01f7c97d62fbc0413b86051ce",
+      "rows": 8784,
+      "first_valid_time": "2024-01-01T00:00",
+      "last_valid_time": "2024-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 49.729904,
+        "longitude": 5.859375,
+        "elevation_m": 394.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 444,
+        "cloud_cover_previous_day1": 444,
+        "shortwave_radiation_previous_day1": 444
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 9,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "arlon_southeast__2025.json",
+      "point_id": "arlon_southeast",
+      "point_label": "Arlon / southeast",
+      "period_id": "2025",
+      "requested_coordinates": {
+        "latitude": 49.68,
+        "longitude": 5.81
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=49.68&longitude=5.81&start_date=2025-01-01&end_date=2025-12-31&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:12.734470+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:12.912460+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 277396,
+      "sha256": "120fa47600725ea12613238b2ff83945b37c27b6aa3a5fccfefad5ad28281b5d",
+      "rows": 8760,
+      "first_valid_time": "2025-01-01T00:00",
+      "last_valid_time": "2025-12-31T23:00",
+      "returned_coordinates": {
+        "latitude": 49.729904,
+        "longitude": 5.859375,
+        "elevation_m": 394.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 13,
+        "negative_shortwave_radiation": 0
+      }
+    },
+    {
+      "file": "arlon_southeast__2026-01-01.json",
+      "point_id": "arlon_southeast",
+      "point_label": "Arlon / southeast",
+      "period_id": "2026-01-01",
+      "requested_coordinates": {
+        "latitude": 49.68,
+        "longitude": 5.81
+      },
+      "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=49.68&longitude=5.81&start_date=2026-01-01&end_date=2026-01-01&hourly=temperature_2m_previous_day1%2Ccloud_cover_previous_day1%2Cshortwave_radiation_previous_day1&models=gfs_global&timezone=GMT",
+      "requested_at_utc": "2026-11-11T03:17:12.918427+00:00",
+      "retrieved_at_utc": "2026-11-11T03:17:13.069580+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 1200,
+      "sha256": "fe2bdf5faf227ff3a7c4fa14cb08e948edca28584c3399b72b8d2578e49c8835",
+      "rows": 24,
+      "first_valid_time": "2026-01-01T00:00",
+      "last_valid_time": "2026-01-01T23:00",
+      "returned_coordinates": {
+        "latitude": 49.729904,
+        "longitude": 5.859375,
+        "elevation_m": 394.0
+      },
+      "units": {
+        "time": "iso8601",
+        "temperature_2m_previous_day1": "°C",
+        "cloud_cover_previous_day1": "%",
+        "shortwave_radiation_previous_day1": "W/m²"
+      },
+      "null_counts": {
+        "temperature_2m_previous_day1": 0,
+        "cloud_cover_previous_day1": 0,
+        "shortwave_radiation_previous_day1": 0
+      },
+      "range_warning_counts": {
+        "cloud_cover_outside_0_100": 0,
+        "negative_shortwave_radiation": 0
+      }
+    }
+  ]
+}

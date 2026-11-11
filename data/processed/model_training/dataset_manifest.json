@@ -1,0 +1,142 @@
+{
+  "schema_version": "belgium-solar-training-v1",
+  "created_at_utc": "2026-11-11T04:40:12.562272+00:00",
+  "purpose": "Frozen chronological files for model training, selection, and final testing",
+  "problem_statement": "Forecast Belgium's average photovoltaic generation estimate in MW for the next UTC hour.",
+  "target": {
+    "column": "power_generation_mw",
+    "unit": "MW",
+    "interval_minutes": 60
+  },
+  "weather_alignment": {
+    "policy": "Weather valid time T+1 is aligned to target interval [T, T+1).",
+    "forecast_product": "Open-Meteo gfs_global previous_day1",
+    "valid_time_offset_hours": 1
+  },
+  "generation_lags_hours": [
+    1,
+    24,
+    168
+  ],
+  "evaluation_protocol": "One-step-ahead rolling evaluation. A row may use observed generation from earlier hours in the same chronological split, but never its current or future target.",
+  "lag_availability_assumption": "Lag values use final historical estimates. Before deployment, verify that the same lags are available from the live API by issue time and measure revisions.",
+  "excluded_from_features": [
+    "power_generation_mw",
+    "Elia dayaheadforecast (exact historical issue-time value unavailable)",
+    "split",
+    "timestamp"
+  ],
+  "feature_columns": [
+    "monitored_capacity_mw",
+    "temperature_2m_c__bruges_west",
+    "temperature_2m_c__antwerp_north",
+    "temperature_2m_c__hasselt_northeast",
+    "temperature_2m_c__ghent_west_central",
+    "temperature_2m_c__brussels_central",
+    "temperature_2m_c__liege_east",
+    "temperature_2m_c__mons_southwest",
+    "temperature_2m_c__namur_south_central",
+    "temperature_2m_c__arlon_southeast",
+    "cloud_cover_pct__bruges_west",
+    "cloud_cover_pct__antwerp_north",
+    "cloud_cover_pct__hasselt_northeast",
+    "cloud_cover_pct__ghent_west_central",
+    "cloud_cover_pct__brussels_central",
+    "cloud_cover_pct__liege_east",
+    "cloud_cover_pct__mons_southwest",
+    "cloud_cover_pct__namur_south_central",
+    "cloud_cover_pct__arlon_southeast",
+    "shortwave_radiation_w_m2__bruges_west",
+    "shortwave_radiation_w_m2__antwerp_north",
+    "shortwave_radiation_w_m2__hasselt_northeast",
+    "shortwave_radiation_w_m2__ghent_west_central",
+    "shortwave_radiation_w_m2__brussels_central",
+    "shortwave_radiation_w_m2__liege_east",
+    "shortwave_radiation_w_m2__mons_southwest",
+    "shortwave_radiation_w_m2__namur_south_central",
+    "shortwave_radiation_w_m2__arlon_southeast",
+    "temperature_2m_c__grid_mean",
+    "temperature_2m_c__grid_std",
+    "cloud_cover_pct__grid_mean",
+    "cloud_cover_pct__grid_std",
+    "shortwave_radiation_w_m2__grid_mean",
+    "shortwave_radiation_w_m2__grid_std",
+    "target_hour_utc",
+    "target_month",
+    "target_day_of_year",
+    "target_hour_sin",
+    "target_hour_cos",
+    "target_day_of_year_sin",
+    "target_day_of_year_cos",
+    "power_generation_lag_1h_mw",
+    "power_generation_lag_24h_mw",
+    "power_generation_lag_168h_mw"
+  ],
+  "audit": {
+    "elia": {
+      "raw_quarter_hour_rows": 70176,
+      "raw_missing_targets": 288,
+      "hourly_rows": 17544,
+      "complete_target_hours": 17256,
+      "first_target_hour_utc": "2024-01-01T00:00:00+00:00",
+      "last_target_hour_utc": "2025-12-31T23:00:00+00:00",
+      "sha256": "d85a51085f6b22d86912fe30be19a486ff6c9c9d4ef4d2f00f636504c8c87dc7"
+    },
+    "weather": {
+      "point_hour_rows": 158112,
+      "grid_points": 9,
+      "unique_valid_times": 17568,
+      "spatial_weather_features": 27,
+      "aggregate_weather_features": 6,
+      "cloud_values_clipped": 125,
+      "weather_manifest_sha256": "f265b1b28bbae51517883236a0ccae5eb610e38399e9fa45f7e31b836d4a4ce1",
+      "weather_grid_config_sha256": "4fddda053cd8fe60fa1cdf0b468714209bae942ab278a09d88a85ae3d347acea"
+    },
+    "rows_before_complete_case_filter": 17544,
+    "rows_after_complete_case_filter": 16553,
+    "rows_excluded": 991,
+    "features": 44,
+    "splits": {
+      "train": {
+        "rows": 5622,
+        "first_timestamp_utc": "2024-01-19T11:00:00+00:00",
+        "last_timestamp_utc": "2024-09-30T23:00:00+00:00"
+      },
+      "validation": {
+        "rows": 2171,
+        "first_timestamp_utc": "2024-10-01T00:00:00+00:00",
+        "last_timestamp_utc": "2024-12-31T23:00:00+00:00"
+      },
+      "test": {
+        "rows": 8760,
+        "first_timestamp_utc": "2025-01-01T00:00:00+00:00",
+        "last_timestamp_utc": "2025-12-31T23:00:00+00:00"
+      }
+    },
+    "training_config_sha256": "a5586bcf5b0d8dfbabf8fe033f32a617539cd420606c945d6c2e6c646c3f450f"
+  },
+  "files": [
+    {
+      "split": "train",
+      "file": "train.csv",
+      "rows": 5622,
+      "bytes": 3047768,
+      "sha256": "9a2595817c7a5bfee2e30af82ddfb2abde8d741f9f87c746ef791fdc0a7c716b"
+    },
+    {
+      "split": "validation",
+      "file": "validation.csv",
+      "rows": 2171,
+      "bytes": 1166690,
+      "sha256": "d11993807193f64f8ab0e4cec14a38c92fe1d1ab2178704c9efc64f5e80f0e7f"
+    },
+    {
+      "split": "test",
+      "file": "test.csv",
+      "rows": 8760,
+      "bytes": 4694508,
+      "sha256": "b4031bf912abb518c371cee5741558a26aecc14dfc920920a9066a2e527649eb"
+    }
+  ],
+  "reproduce": "uv run python -m scripts.prepare_training_data --force"
+}
