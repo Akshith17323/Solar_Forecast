@@ -92,7 +92,7 @@ and revisions when implementing the collectors.
 - Optional Streamlit shell, offline validation script, synthetic fixtures, tests,
   and a GitHub Actions workflow.
 - Versioned nine-point Belgian weather-grid configuration, reproducible archived
-  weather downloader, checksummed raw manifest, and validated loading notebook.
+  weather downloader, checksummed raw manifest, and validated loading/cleaning notebooks.
 
 **Not implemented yet:** scheduled production ingestion, persistent live-feed
 collection, Parquet pipelines, model training/evaluation, artifact
@@ -162,8 +162,9 @@ uv run python -m scripts.download_belgium_weather
 
 The command creates immutable, Git-ignored responses and a checksum manifest under
 `data/raw/belgium_weather_archive/`. Existing responses are not overwritten unless
-`--force` is supplied. Open `notebooks/01_data_loading.ipynb` to validate and align
-the Elia target with these weather inputs.
+`--force` is supplied. Open `notebooks/01_data_loading.ipynb` to verify the prepared
+splits and `notebooks/02_data_cleaning.ipynb` to audit the raw-source cleaning and
+target/weather alignment rules.
 
 Create the frozen model-training files:
 
@@ -255,7 +256,7 @@ data/sample/                   Documented synthetic fixtures
 data/{raw,interim,processed}/  Ignored local/generated data
 artifacts/                     Ignored generated model/metric artifacts
 tests/                         Offline unit and API contract tests
-notebooks/                     Validated data loading plus planning starter
+notebooks/                     Validated data loading/cleaning plus planning starter
 publishing/kaggle/             Safe-to-edit publishing metadata templates
 docs/                          Backend, decisions, and publishing guides
 .github/workflows/ci.yml       Lint, format, and tests
